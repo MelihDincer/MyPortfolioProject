@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfPortfolioDal : GenericRepository<Portfolio>, IPortfolio
+    public class EfPortfolioDal : GenericRepository<Portfolio>, IPortfolioDal
     {
     }
 }
