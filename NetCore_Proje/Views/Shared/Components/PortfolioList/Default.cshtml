@@ -9,19 +9,19 @@
         <div class="grid bp-gallery pb-3" data-aos="zoom-in-up" data-aos-delay="100">
             <div class="grid-sizer"></div>
 
-            @foreach(var item in Model)
+            @foreach (var item in Model)
             {
-            <div class="grid-item">
-                <a href="https://dribbble.com">
-                    <figure class="portfolio-item">
-                        <img src="@item.ImageUrl" data-bp="@item.ImageUrl2" />
-                        <figcaption>
-                            <h4 class="h5 mb-0">@item.Name</h4>
-                            <div>@item.ProjectUrl</div>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>
+                <div class="grid-item">
+                    <a href="https://dribbble.com">
+                        <figure class="portfolio-item">
+                            <img src="@item.ImageUrl" data-bp="@item.ImageUrl2" />
+                            <figcaption>
+                                <h4 class="h5 mb-0">@item.Name</h4>
+                                <div>@item.ProjectUrl</div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
             }
         </div>
     </div>
