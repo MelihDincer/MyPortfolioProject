@@ -18,7 +18,7 @@ namespace DataAccessLayer.Concrete
         }
 
         public DbSet<About> Abouts { get; set; } // <About> == Sınıfın ismi || Abouts  SQL Server da gözükecek tablo adı.
-        public DbSet<Contact> Contexts { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
         public DbSet<Experience> Experiences { get; set; }
         public DbSet<Feature> Features { get; set; }
         public DbSet<Message> Messages { get; set; }
