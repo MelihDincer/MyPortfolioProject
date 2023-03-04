@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    //Ortak metotlar burada oluşturulan genericdal interface den kalıtım alınacak. Base interface diyebiliriz.
+    //Ortak metotları burada tanımladık.  Bu interface den kalıtım alınacak. Base interface diyebiliriz.
     public interface IGenericDal<T> where T : class // T ye bir sınıf gönderdik bu sınıf entity den gelen bir değer olacak.
     {
         void Insert(T t);
