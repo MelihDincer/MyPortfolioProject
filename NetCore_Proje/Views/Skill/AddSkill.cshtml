@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "AddSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Yetenek Ekleme Sayfası</h3>
+</div>
+@*Sayfa bir post işlemi gerçekleştiğinde aşağıdaki kod satırları çalışacak.*@
+<form class="form-group" method="post">
+    <br />
+    @Html.Label("Yetenek Başlığı")
+    <input type="text" name="Title" class="form-control" />
+    <br />
+    <label>Değer</label>
+    <input type="text" name="Value" class="form-control" />
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+</form>
