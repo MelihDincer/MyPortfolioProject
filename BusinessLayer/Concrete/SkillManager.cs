@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(Skill t)
         {
-            throw new NotImplementedException();
+            _skillDal.Insert(t);
         }
 
         public void TDelete(Skill t)
