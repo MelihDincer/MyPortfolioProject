@@ -25,5 +25,10 @@ namespace NetCore_Proje.Controllers
         {
             return PartialView();
         }
+
+        public PartialViewResult NavigationPartial()
+        {
+            return PartialView();
+        }
     }
 }
