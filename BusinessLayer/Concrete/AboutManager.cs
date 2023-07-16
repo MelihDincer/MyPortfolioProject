@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class AboutManager : IAboutService // Bir interface miras alınıyorsa, o interface nin içerisindeki metodları bu class ın içerisine dahil etmemiz (implamente) gerekmektedir.
+    public class AboutManager : IAboutService // Bir interface miras alınıyorsa, o interface nin içerisindeki metodları bu class ın içerisine dahil etmemiz (implemente) gerekmektedir.
     {
         IAboutDal _aboutDal;
 
@@ -23,7 +23,7 @@ namespace BusinessLayer.Concrete
         {
             return _aboutDal.GetList();
         }
-
+        // Burada kullanılan GetList, Insert, Delete, GetByID ve Update metotları, Data Access Layer'da IGenericDal içerisinde oluşturmuştuk. Proje başlangıcında yaptığımız referans etme işlemleri sayesinde bu metotları kullanabiliyoruz.
         public void TAdd(About t)
         {
             _aboutDal.Insert(t);

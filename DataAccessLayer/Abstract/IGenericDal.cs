@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    //Ortak metotları burada tanımladık.  Bu interface den kalıtım alınacak. Base interface diyebiliriz.
+    //Oluşturduğumuz interface lerde ortak imzalar olduğundan ve tek farkın metot parametreleri olduğundan dolayı Generic bir interface oluşturma ihtiyacı duyduk. T adında bir değer belirledik ve bu T değeri bir class olacak, bu class Generic interface i miras alan interface'de belirlenecek. 
     public interface IGenericDal<T> where T : class // T ye bir sınıf gönderdik bu sınıf entity den gelen bir değer olacak.
     {
         void Insert(T t);
