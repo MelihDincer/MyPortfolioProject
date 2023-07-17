@@ -31,13 +31,13 @@ namespace NetCore_Proje.Controllers
         }
 
         [HttpPost]
-        public PartialViewResult SendMessage(Message p)
+        public IActionResult SendMessage(Message p)
         {
             MessageManager messageManager = new MessageManager(new EfMessageDal());
             p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString()); // Mesajın kaydedildiği andaki tarihi veritabanına yansıtma işlemi.
             p.Status = true;
             messageManager.TAdd(p);
-            return PartialView();
+            return Redirect("/Default/Index#contact");
         }
     }
 }
