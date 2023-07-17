@@ -8,7 +8,7 @@
     <h3 class="mb-0">Yetenek Düzenleme Sayfası</h3>
 </div>
 
-@using(Html.BeginForm("EditSkill", "Skill", FormMethod.Post)) //1. parametre action ismi, 2.parametre controller ismi, 3.parametre form method türü
+@*@using(Html.BeginForm("EditSkill", "Skill", FormMethod.Post)) //1. parametre action ismi, 2.parametre controller ismi, 3.parametre form method türü
 {
     @Html.HiddenFor(x=> x.SkillID)
     <br />
@@ -19,5 +19,16 @@
     @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
     <br />
     <button class="btn btn-success">Kaydet</button>
-}
+}*@
 
+<form asp-action="EditSkill" asp-controller="Skill" method="post">
+    <input type="hidden" asp-for="SkillID" />
+    <br />
+    <label asp-for="Title"></label>
+    <input asp-for="Title" class="form-control"/>
+    <br />
+    <label asp-for="Value"></label>
+    <input asp-for="Value" class="form-control" />
+    <br />
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</form>
