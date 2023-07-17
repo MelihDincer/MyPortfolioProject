@@ -8,7 +8,6 @@ namespace NetCore_Proje.Controllers
         {
             return PartialView();
         }
-
         public PartialViewResult PartialFooter()
         {
             return PartialView();
