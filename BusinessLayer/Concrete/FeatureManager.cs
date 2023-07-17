@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class FeatureManager : IGenericService<Feature>
+    public class FeatureManager : IGenericService<Feature> //Burada "iki nokta(":")'dan sonra direkt olarak IFeatureService yazılarak da implementasyon işlemi uygulanabilir.İki türlü de aynı sonuç alınacaktır. Tüm generate interface'ler için bu durum geçerlidir.
     {
         IFeatureDal  _featureDal;
 
