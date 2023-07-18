@@ -1,4 +1,5 @@
-﻿
+﻿@model EntityLayer.Concrete.Skill
+
 @{
     ViewData["Title"] = "AddSkill";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -8,13 +9,14 @@
     <h3 class="mb-0">Yetenek Ekleme Sayfası</h3>
 </div>
 @*Sayfa bir post işlemi gerçekleştiğinde aşağıdaki kod satırları çalışacak.*@
-<form class="form-group" method="post">
+<form asp-action="AddSkill" asp-controller="Skill" method="post" class="form-group">
     <br />
-    @Html.Label("Yetenek Başlığı")
-    <input type="text" name="Title" class="form-control" />
+    @*@Html.Label("Yetenek Başlığı")*@
+    <label>Yetenek Adı</label>
+    <input asp-for="Title" class="form-control" />
     <br />
     <label>Değer</label>
-    <input type="text" name="Value" class="form-control" />
+    <input asp-for="Value" class="form-control" />
     <br />
-    <button class="btn btn-primary">Kaydet</button>
+    <button type="submit" class="btn btn-primary">Ekle</button>
 </form>
