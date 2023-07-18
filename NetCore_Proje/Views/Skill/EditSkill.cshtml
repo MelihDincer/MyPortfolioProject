@@ -21,14 +21,14 @@
     <button class="btn btn-success">Kaydet</button>
 }*@
 
-<form asp-action="EditSkill" asp-controller="Skill" method="post">
+<form asp-action="EditSkill" asp-controller="Skill" method="post" class="form-group">
     <input type="hidden" asp-for="SkillID" />
     <br />
-    <label asp-for="Title"></label>
+    <label>Yetenek Adı</label>
     <input asp-for="Title" class="form-control"/>
     <br />
-    <label asp-for="Value"></label>
+    <label>Değer</label>
     <input asp-for="Value" class="form-control" />
     <br />
-    <button type="submit" class="btn btn-success">Kaydet</button>
+    <button type="submit" class="btn btn-success">Güncelle</button>
 </form>
