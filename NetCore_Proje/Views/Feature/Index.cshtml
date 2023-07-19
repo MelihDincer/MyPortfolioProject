@@ -1,8 +1,23 @@
-﻿
+﻿@model EntityLayer.Concrete.Feature
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Burası Content Alanıdır</h1>
-
+<div class="card-header border-0">
+    <h3 class="mb-0">Öne Çıkan Post Düzenleme Sayfası</h3>
+</div>
+<form asp-action="Index" asp-controller="Feature" method="post" class="form-group">
+    <input type="hidden" asp-for="FeatureID" />
+    <br />
+    <label>Başlık</label>
+    <input asp-for="Header" class="form-control" />
+    <br />
+    <label>Ad Soyad</label>
+    <input asp-for="Name" class="form-control" />
+    <br/>
+    <label>Görev</label>
+    <input asp-for="Title" class="form-control" />
+    <br />
+    <button type="submit" class="btn btn-success">Düzenlemeyi Bitir</button>
+</form>
