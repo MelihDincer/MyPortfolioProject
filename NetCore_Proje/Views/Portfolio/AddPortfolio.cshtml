@@ -1,0 +1,47 @@
+﻿@model EntityLayer.Concrete.Portfolio
+@{
+    ViewData["Title"] = "AddPortfolio";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Proje Ekleme Sayfası</h3>
+</div>
+<form asp-action="AddPortfolio" asp-controller="Portfolio" method="post" class="form-group">
+    <br />
+    @*@Html.Label("Yetenek Başlığı")*@
+    <label>Proje Başlığı</label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    @*@Html.ValidationMessageFor(x=>x.Name)*@
+    <br />
+    <label>Görsel1</label>
+    <input asp-for="ImageUrl" class="form-control" />
+    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    <br />
+    <label>Görsel2</label>
+    <input asp-for="ImageUrl2" class="form-control" />
+    <span asp-validation-for="ImageUrl2" class="text-danger mt-1"></span>
+    <br />
+    <label>Proje URL</label>
+    <textarea asp-for="ProjectUrl" class="form-control"></textarea>
+    <span asp-validation-for="ProjectUrl" class="text-danger"></span>
+    <br />
+    <label>Fiyat</label>
+    <input asp-for="Price" class="form-control" />
+    <span asp-validation-for="Price" class="text-danger"></span>
+    <br />
+    <label>Tamamlanma Oranı</label>
+    <input asp-for="Value" class="form-control" />
+    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    <br />
+    <label>Görsel1</label>
+    <input asp-for="ImageUrl" class="form-control" />
+    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    <br />
+    <label>Görsel1</label>
+    <input asp-for="ImageUrl" class="form-control" />
+    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    <br />
+    <button type="submit" class="btn btn-info">Ekle</button>
+</form>
