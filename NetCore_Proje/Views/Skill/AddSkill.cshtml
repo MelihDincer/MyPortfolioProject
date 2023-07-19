@@ -8,10 +8,8 @@
 <div class="card-header border-0">
     <h3 class="mb-0">Yetenek Ekleme Sayfası</h3>
 </div>
-@*Sayfa bir post işlemi gerçekleştiğinde aşağıdaki kod satırları çalışacak.*@
 <form asp-action="AddSkill" asp-controller="Skill" method="post" class="form-group">
     <br />
-    @*@Html.Label("Yetenek Başlığı")*@
     <label>Yetenek Adı</label>
     <input asp-for="Title" class="form-control" />
     <br />
