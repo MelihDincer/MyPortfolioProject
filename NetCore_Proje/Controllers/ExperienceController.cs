@@ -19,6 +19,9 @@ namespace NetCore_Proje.Controllers
         [HttpGet]
         public IActionResult AddExperience()
         {
+            ViewBag.v1 = "Deneyim Ekleme";
+            ViewBag.v2 = "Deneyimler";
+            ViewBag.v3 = "Deneyim Ekle";
             return View();
         }
         [HttpPost]
