@@ -2,13 +2,43 @@
 @model List<Experience>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
-
-<div class="card-header border-0">
-    <h3 class="mb-0">Deneyim Listesi Tablosu</h3>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Başlık</th>
+                            <th>Tarih</th>
+                            <th>Sil</th>
+                            <th>Düzenle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th>@item.ExperienceID</th>
+                                <td>@item.Name</td>
+                                <td>@item.Date</td>
+                                <td><a href="/Experience/DeleteExperience/@item.ExperienceID" class="btn btn-outline-danger" onclick="return confirm('Gerçekten Silmek İstiyor musunuz?')">Sil</a> </td>
+                                <td><a href="/Experience/EditExperience/@item.ExperienceID" class="btn btn-outline-success">Güncelle</a> </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <br />
+                <a style="float:right; margin-right:65px" href="/Experience/AddExperience/" class="btn btn-outline-info">Yeni Deneyim Ekle</a>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- Light table -->
+
+@*<!-- Light table (ESKİ GÖRÜNÜM) -->
 <div class="table-responsive">
     <table class="table align-items-center table-flush">
         <thead class="thead-light">
@@ -41,4 +71,4 @@
         </tbody>
     </table>
     <a href="/Experience/AddExperience/" class="btn btn-primary">Yeni Deneyim Ekle</a>
-</div>
+</div>*@
