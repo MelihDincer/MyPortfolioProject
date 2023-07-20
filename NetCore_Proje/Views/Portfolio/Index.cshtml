@@ -2,15 +2,15 @@
 @model List<Portfolio>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
 <div class="row">
     <div class="col">
         <div class="card bg-default shadow">
-            <div class="card-header bg-transparent border-0">
+            @*<div class="card-header bg-transparent border-0">
                 <h3 class="text-white mb-0">Projelerim</h3>
-            </div>
+            </div>*@
             <div class="table-responsive">
                 <table class="table align-items-center table-dark table-flush">
                     <thead class="thead-dark">
@@ -56,15 +56,16 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td><a href="/Portfolio/DeletePortfolio/@item.PortfolioID" class="btn btn-dark" onclick="return confirm('Bu projeyi silmek istediğinize emin misiniz?')">Sil</a></td>
-                                <td><a href="/Portfolio/EditPortfolio/@item.PortfolioID" class="btn btn-light text-dark">Düzenle</a></td>
+                                <td><a href="/Portfolio/DeletePortfolio/@item.PortfolioID" class="btn btn-outline-danger" onclick="return confirm('Bu projeyi silmek istediğinize emin misiniz?')">Sil</a></td>
+                                <td><a href="/Portfolio/EditPortfolio/@item.PortfolioID" class="btn btn-outline-warning">Düzenle</a></td>
                             </tr>
                         }
                     </tbody>
                 </table>               
             </div>
         </div>
-        <a href="/Portfolio/AddPortfolio/" class="btn btn-primary">Yeni Proje Girişi</a>
+        <div class="mt-3">
+        <a href="/Portfolio/AddPortfolio/" class="btn btn-primary btn-lg ">Yeni Proje Girişi</a>
+        </div>
     </div>
 </div>
-
