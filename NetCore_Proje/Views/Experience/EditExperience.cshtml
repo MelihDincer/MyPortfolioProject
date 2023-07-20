@@ -1,10 +1,46 @@
 ﻿@model EntityLayer.Concrete.Experience
 @{
     ViewData["Title"] = "EditExperience";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<div class="card-header border-0">
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-description mb-4"> Deneyim Düzenleme Ekleme Paneli </h5>
+            <form asp-action="EditExperience" asp-controller="Experience" method="post" class="forms-sample">
+                <div class="form-group">
+                    <input type="hidden" asp-for="ExperienceID" />
+                </div>
+                <div class="form-group">
+                    <label>Başlık</label>
+                    <input asp-for="Name" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Tarih Bilgisi</label>
+                    <input asp-for="Date" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Resim Yolu</label>
+                    <input asp-for="ImageUrl" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <textarea asp-for="Description" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                <button class="btn btn-dark">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+@*
+    <--- ESKİ GÖRÜNÜM --->
+
+    <div class="card-header border-0">
     <h3 class="mb-0">Deneyim Düzenleme Sayfası</h3>
 </div>
 <form asp-action="EditExperience" asp-controller="Experience" method="post" class="form-group">
@@ -24,3 +60,4 @@
     <br />
     <button type="submit" class="btn btn-success">Güncelle</button>
 </form>
+*@
