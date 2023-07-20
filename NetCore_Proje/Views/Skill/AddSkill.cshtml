@@ -2,19 +2,23 @@
 
 @{
     ViewData["Title"] = "AddSkill";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<div class="card-header border-0">
-    <h3 class="mb-0">Yetenek Ekleme Sayfası</h3>
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <form asp-action="AddSkill" asp-controller="Skill" method="post" class="form-group">
+                <br />
+                <label>Yetenek Adı</label>
+                <input asp-for="Title" class="form-control" />
+                <br />
+                <label>Değer</label>
+                <input asp-for="Value" class="form-control" />
+                <br />
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+                <a href="/Skill/Index/" class="btn btn-dark ml-2">İptal</a>
+            </form>
+        </div>
+    </div>
 </div>
-<form asp-action="AddSkill" asp-controller="Skill" method="post" class="form-group">
-    <br />
-    <label>Yetenek Adı</label>
-    <input asp-for="Title" class="form-control" />
-    <br />
-    <label>Değer</label>
-    <input asp-for="Value" class="form-control" />
-    <br />
-    <button type="submit" class="btn btn-primary">Ekle</button>
-</form>
