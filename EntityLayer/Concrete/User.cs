@@ -18,6 +18,6 @@ namespace EntityLayer.Concrete
         public string Password{ get; set; }
         public string ImageURL{ get; set; }
         public bool Status{ get; set; }
-        public List<UserMessage> UserMessages { get; set; }
+        public List<UserMessage> UserMessages { get; set; } // 1'e çok ilişki kuruldu, yani bir kullanıcı birden fazla mesaj atabilir.
     }
 }
