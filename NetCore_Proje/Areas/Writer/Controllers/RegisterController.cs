@@ -1,10 +1,10 @@
 ﻿using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using NetCore_Proje.Areas.Writer.Models;
+using NetCore_Proje.Area.Writer.Models;
 using System.Threading.Tasks;
 
-namespace NetCore_Proje.Areas.Writer.Controllers
+namespace NetCore_Proje.Area.Writer.Controllers
 {
     [Area("Writer")]
     public class RegisterController : Controller
@@ -32,21 +32,25 @@ namespace NetCore_Proje.Areas.Writer.Controllers
                 WriterUser w = new()
                 {
                     Name = p.Name,
-                    Surname = p.SurnameName,
+                    Surname = p.Surname,
                     Email = p.Mail,
                     UserName = p.UserName,
                     ImageURL = p.ImageURL
                 };
-                var result = await _userManager.CreateAsync(w,p.Password);
-                if (result.Succeeded)
+
+                if(p.Password == p.ConfirmPassword) // result değeri bu şart geçerli olduğunda atanacağı için, şifrelerin eşleşmemesi durumunda db'ye veri kaydedilmeyecek. Şifreler eşleşmediği halde db'ye veri eklendiği için bu şart içerisinde işlemler gerçekleştirilmiştir.
                 {
-                    return RedirectToAction("Index", "Login");
-                }
-                else
-                {
-                    foreach (var item in result.Errors)
+                    var result = await _userManager.CreateAsync(w, p.Password);
+                    if (result.Succeeded)
                     {
-                        ModelState.AddModelError("", item.Description);
+                        return RedirectToAction("Index", "Login");
+                    }
+                    else
+                    {
+                        foreach (var item in result.Errors)
+                        {
+                            ModelState.AddModelError("", item.Description);
+                        }
                     }
                 }
             }
