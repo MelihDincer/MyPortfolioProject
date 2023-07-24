@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
-namespace NetCore_Proje.Areas.Writer.Controllers
+namespace NetCore_Proje.Area.Writer.Controllers
 {
     [Area("Writer")]
+    [Authorize]
     public class DefaultController : Controller
     {
         public IActionResult Index()
