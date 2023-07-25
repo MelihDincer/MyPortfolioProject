@@ -120,6 +120,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Writer\Data\" />
+    <Folder Include="wwwroot\userimage\" />
   </ItemGroup>
 
 </Project>
