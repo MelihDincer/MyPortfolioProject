@@ -22,7 +22,11 @@ namespace NetCore_Proje.Areas.Writer.Controllers
         public async Task<IActionResult> Index()
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
-            return View(values);
+            UserEditViewModel model = new UserEditViewModel();
+            model.Name = values.Name;
+            model.Surname = values.Surname;
+            model.PictureURL = values.ImageURL;
+            return View(model);
         }
 
         [HttpPost]
