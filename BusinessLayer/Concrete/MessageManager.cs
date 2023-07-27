@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class MessageManager :IMessageService
+    public class MessageManager : IMessageService
     {
         IMessageDal _messageDal;
 
@@ -34,6 +34,11 @@ namespace BusinessLayer.Concrete
         }
 
         public List<Message> TGetList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Message> TGetListByFilter()
         {
             throw new NotImplementedException();
         }

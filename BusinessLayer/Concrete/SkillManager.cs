@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class SkillManager:ISkillService
+    public class SkillManager : ISkillService
     {
         ISkillDal _skillDal;
 
@@ -30,12 +30,17 @@ namespace BusinessLayer.Concrete
 
         public Skill TGetById(int id)
         {
-           return _skillDal.GetByID(id);
+            return _skillDal.GetByID(id);
         }
 
         public List<Skill> TGetList()
         {
             return _skillDal.GetList();
+        }
+
+        public List<Skill> TGetListByFilter()
+        {
+            throw new NotImplementedException();
         }
 
         public void TUpdate(Skill t)

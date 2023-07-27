@@ -11,7 +11,7 @@ namespace BusinessLayer.Concrete
 {
     public class FeatureManager : IGenericService<Feature> //Burada "iki nokta(":")'dan sonra direkt olarak IFeatureService yazılarak da implementasyon işlemi uygulanabilir.İki türlü de aynı sonuç alınacaktır. Tüm generate interface'ler için bu durum geçerlidir.
     {
-        IFeatureDal  _featureDal;
+        IFeatureDal _featureDal;
 
         public FeatureManager(IFeatureDal featureDal)
         {
@@ -35,12 +35,17 @@ namespace BusinessLayer.Concrete
 
         public Feature TGetById(int id)
         {
-           return _featureDal.GetByID(id);
+            return _featureDal.GetByID(id);
         }
 
         public void TUpdate(Feature t)
         {
-            _featureDal.Update(t);  
+            _featureDal.Update(t);
+        }
+
+        public List<Feature> TGetListByFilter()
+        {
+            throw new NotImplementedException();
         }
     }
 }

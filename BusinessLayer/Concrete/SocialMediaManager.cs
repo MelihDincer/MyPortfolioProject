@@ -38,6 +38,11 @@ namespace BusinessLayer.Concrete
             return _socialmediaDal.GetList();
         }
 
+        public List<SocialMedia> TGetListByFilter()
+        {
+            throw new NotImplementedException();
+        }
+
         public void TUpdate(SocialMedia t)
         {
             throw new NotImplementedException();

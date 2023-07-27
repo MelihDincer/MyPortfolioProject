@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class UserMessageManager:IUserMessageService
+    public class UserMessageManager : IUserMessageService
     {
         IUserMessageDal _userMessageDal;
 
@@ -41,6 +41,11 @@ namespace BusinessLayer.Concrete
         public List<UserMessage> TGetList()
         {
             return _userMessageDal.GetList();
+        }
+
+        public List<UserMessage> TGetListByFilter()
+        {
+            throw new NotImplementedException();
         }
 
         public void TUpdate(UserMessage t)
