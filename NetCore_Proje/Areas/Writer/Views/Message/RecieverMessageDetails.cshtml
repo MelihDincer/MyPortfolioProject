@@ -1,0 +1,32 @@
+﻿@model EntityLayer.Concrete.WriterMessage
+@{
+    ViewData["Title"] = "RecieverMessageDetails";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="row justify-content-center">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <h3 style="margin:25px">Gönderilen Mesajlar</h3>
+                <div class="text-right" style="padding-right:20px">
+                    <strong style="font-size:14px;">@Model.Date.ToString("dd MMM yyyy")</strong>
+                </div>
+                <div class="card-body" style="margin-bottom:15px">
+                    <div class="container-fluid">
+                        <p class="font-weight-500" style="font-size: 15px"><span style="font-weight:bold">Alıcı Adı:</span> @Model.ReceiverName</p>
+                        <br />
+                        <p class="font-weight-500" style="font-size: 15px; word-break:break-word"><span style="font-weight:bold">Alıcı Mail:</span> @Model.Receiver</p>
+                        <br />
+                        <p class="font-weight-500" style="font-size: 15px; word-break:break-word"><span style="font-weight:bold">Konu:</span> @Model.Subject</p>
+                        <br />
+                        <p class="font-weight-500" style="font-size: 15px; word-break:break-word"><span style="font-weight:bold">Mesaj:</span></p>
+                    </div>
+                    <div style="width:95%; height:500px; border-radius:17px; background-color:whitesmoke">
+                        <p class="font-weight-500" style="font-size: 15px; word-break:break-word; padding:28px">@Model.MessageContent</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
