@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace NetCore_Proje.Area.Writer.Controllers
 {
     [Area("Writer")]
+    [Route("Writer/[controller]/[action]")]
     public class RegisterController : Controller
     {
 
