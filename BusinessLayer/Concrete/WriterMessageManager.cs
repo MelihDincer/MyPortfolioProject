@@ -18,9 +18,19 @@ namespace BusinessLayer.Concrete
             _writerMessageDal = writerMessageDal;
         }
 
+        public List<WriterMessage> GetListRecieverMessage(string p)
+        {
+            return _writerMessageDal.GetByFilter(x => x.Receiver == p); //Alıcısı olduğumuz mesajları listele.
+        }
+
+        public List<WriterMessage> GetListSenderMessage(string p)
+        {
+            return _writerMessageDal.GetByFilter(x => x.Sender == p); //Göndericisi olduğumuz mesajları listele.
+        }
+
         public void TAdd(WriterMessage t)
         {
-            throw new NotImplementedException();
+            _writerMessageDal.Insert(t);
         }
 
         public void TDelete(WriterMessage t)
@@ -30,17 +40,12 @@ namespace BusinessLayer.Concrete
 
         public WriterMessage TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _writerMessageDal.GetByID(id);
         }
 
         public List<WriterMessage> TGetList()
         {
             throw new NotImplementedException();
-        }
-
-        public List<WriterMessage> TGetListByFilter(string p)
-        {
-            return _writerMessageDal.GetByFilter(x => x.Receiver == p); //Alıcısı olduğumuz mesajları listele.
         }
 
         public List<WriterMessage> TGetListByFilter()
