@@ -7,10 +7,33 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/Writer/Message/Index/">
-                <i class="mdi mdi-email-outline menu-icon"></i>
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                <i class="mdi mdi-send menu-icon"></i>
                 <span class="menu-title">Mesajlar</span>
+                <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="auth">
+                <ul class="nav flex-column sub-menu" id="message">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Writer/Message/Recievermessage/">
+                            @*<i class="mdi mdi-message-text menu-icon"></i>*@
+                            <span class="menu-title">Gelen Mesajlar</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Writer/Message/SenderMessage/">
+                            @*<i class="ti-agenda menu-icon"></i>*@
+                            <span class="menu-title">Gönderilen Mesajlar</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Writer/Message/SendMessage/">
+                            @*<i class="mdi mdi-message-plus menu-icon"></i>*@
+                            <span class="menu-title">Yeni Mesaj</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/Writer/Default/Index/">
