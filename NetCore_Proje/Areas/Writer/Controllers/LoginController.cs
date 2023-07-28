@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace NetCore_Proje.Area.Writer.Controllers
 {
     [Area("Writer")]
+    [Route("Writer/[controller]/[action]")]
     public class LoginController : Controller
     {
         //Dependency Injection Uygulaması --> Başlangıç
@@ -16,7 +17,7 @@ namespace NetCore_Proje.Area.Writer.Controllers
         {
             _signInManager = signInManager;
         }
-        //Kullanıcı Adı: admin41 <----> Şifre: 1234Aa*
+        //Kullanıcı Adı: admin41 <----> Şifre: 123456Aa*
 
         [HttpGet]
         public IActionResult Index()
@@ -39,6 +40,12 @@ namespace NetCore_Proje.Area.Writer.Controllers
                 }
             }
             return View();
+        }
+
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Login");
         }
     }
 }
