@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete.Message
+@{
+    ViewData["Title"] = "ContactDetails";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="row justify-content-center">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="text-right" style="padding-right:20px; padding-top:20px">
+                    <strong style="font-size:14px;">@Model.Date.ToString("dd MMM yyyy")</strong>
+                </div>
+                <div class="card-body" style="margin-bottom:15px">
+                    <div class="container-fluid">
+                        <p class="font-weight-500" style="font-size: 15px"><span style="font-weight:bold">ID:</span> @Model.MessageID</p>
+                        <p class="font-weight-500" style="font-size: 15px; word-break:break-word"><span style="font-weight:bold">Gönderenin Adı:</span> @Model.Name</p>
+                        <p class="font-weight-500" style="font-size: 15px; word-break:break-word"><span style="font-weight:bold">Mail:</span> @Model.Mail</p>
+                        <p class="font-weight-500" style="font-size: 15px; word-break:break-word"><span style="font-weight:bold">Açıklama:</span></p>
+                    </div>
+                    <div style="width:95%; height:400px; border-radius:17px; background-color:slategrey">
+                        <p class="font-weight-600" style="font-size: 15px; color:black; word-break:break-word; padding:28px">@Model.Content</p>
+                    </div>
+                    <a asp-action="Index" style="float:right" class="btn btn-outline-success mt-5">İletişim Sayfası>></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
