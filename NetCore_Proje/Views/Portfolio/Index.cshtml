@@ -5,26 +5,24 @@
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<div class="row">
-    <div class="col">
-        <div class="card bg-default shadow">
-            @*<div class="card-header bg-transparent border-0">
-                <h3 class="text-white mb-0">Projelerim</h3>
-            </div>*@
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
             <div class="table-responsive">
-                <table class="table align-items-center table-dark table-flush">
-                    <thead class="thead-dark">
+                <table class="table align-items-center  table-flush">
+                    <thead>
                         <tr>
-                            <th scope="col" class="sort" data-sort="name">Proje</th>
-                            <th scope="col" class="sort" data-sort="budget">Ücret</th>
-                            <th scope="col" class="sort" data-sort="status">Durum</th>
-                            <th scope="col" class="sort" data-sort="completion">Tamamlanma Oranı</th>
-                            <th scope="col">Sil</th>
-                            <th scope="col">Düzenle</th>
+                            <th>Proje</th>
+                            <th>Ücret</th>
+                            <th>Durum</th>
+                            <th>Tamamlanma Oranı</th>
+                            <th>Sil</th>
+                            <th>Düzenle</th>
                         </tr>
                     </thead>
-                    <tbody class="list">
-                        @foreach(var item in Model)
+                    <tbody>
+                        @foreach (var item in Model)
                         {
                             <tr>
                                 <th scope="row">
@@ -38,9 +36,9 @@
                                     </div>
                                 </th>
                                 <td class="budget">
-                                   @item.Price
+                                    @item.Price
                                 </td>
-                                <td>
+                                <td class="budget">
                                     <span class="badge badge-dot mr-4">
                                         <i class="bg-success"></i>
                                         <span class="status">Tamamlandı</span>
@@ -51,21 +49,20 @@
                                         <span class="completion mr-2">%@item.Value</span>
                                         <div>
                                             <div class="progress">
-                                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: @item.Value%;"></div>
+                                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: @item.Value%"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </td>
-                                <td><a href="/Portfolio/DeletePortfolio/@item.PortfolioID" class="btn btn-outline-danger" onclick="return confirm('Bu projeyi silmek istediğinize emin misiniz?')">Sil</a></td>
-                                <td><a href="/Portfolio/EditPortfolio/@item.PortfolioID" class="btn btn-outline-warning">Düzenle</a></td>
+                                <td><a href="/Portfolio/DeletePortfolio/@item.PortfolioID" class="btn btn-outline-danger" onclick="return confirm('Bu deneyimi silmek istediğinize emin misiniz?')">Sil</a></td>
+                                <td><a href="/Portfolio/EditPortfolio/@item.PortfolioID" class="btn btn-outline-warning">Güncelle</a></td>
                             </tr>
                         }
                     </tbody>
-                </table>               
+                </table>
+                <br />
+                <a href="/Portfolio/AddPortfolio/" class="btn btn-outline-info">Yeni Proje Girişi</a>
             </div>
-        </div>
-        <div class="mt-3">
-        <a href="/Portfolio/AddPortfolio/" class="btn btn-primary btn-lg ">Yeni Proje Girişi</a>
         </div>
     </div>
 </div>
