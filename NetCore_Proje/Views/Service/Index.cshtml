@@ -2,26 +2,23 @@
 @model List<Service>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<div class="row">
-    <div class="col">
-        <div class="card bg-default shadow">
-            <div class="card-header bg-transparent border-0">
-                <h3 class="text-white mb-0">Hizmet Listesi Tablosu</h3>
-            </div>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
             <div class="table-responsive">
-                <table class="table align-items-center table-dark table-flush">
-                    <thead class="thead-dark">
+                <table class="table align-items-center  table-flush">
+                    <thead>
                         <tr>
-                            <th scope="col" class="sort" data-sort="name">#</th>
-                            <th scope="col" class="sort" data-sort="budget">Başlık</th>
-                            <th scope="col">Sil</th>
-                            <th scope="col">Düzenle</th>
+                            <th>#</th>
+                            <th>Başlık</th>
+                            <th>Sil</th>
+                            <th>Düzenle</th>
                         </tr>
                     </thead>
-                    <tbody class="list">
+                    <tbody>
                         @foreach (var item in Model)
                         {
                             <tr>
@@ -31,14 +28,15 @@
                                 <td class="budget">
                                     @item.Title
                                 </td>
-                                <td><a href="/Service/DeleteService/@item.ServiceID" class="btn btn-dark" onclick="return confirm('Bu deneyimi silmek istediğinize emin misiniz?')">Sil</a></td>
-                                <td><a href="/Service/EditService/@item.ServiceID" class="btn btn-light text-dark">Düzenle</a></td>
+                                <td><a href="/Service/DeleteService/@item.ServiceID" class="btn btn-outline-danger" onclick="return confirm('Bu deneyimi silmek istediğinize emin misiniz?')">Sil</a></td>
+                                <td><a href="/Service/EditService/@item.ServiceID" class="btn btn-outline-info">Güncelle</a></td>
                             </tr>
                         }
                     </tbody>
                 </table>
+                <br />
+                <a href="/Service/AddService/" class="btn btn-outline-info">Yeni Hizmet Girişi</a>
             </div>
         </div>
-        <a href="/Service/AddService/" class="btn btn-primary">Yeni Proje Girişi</a>
     </div>
 </div>
