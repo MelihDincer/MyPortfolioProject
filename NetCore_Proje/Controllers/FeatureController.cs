@@ -14,7 +14,7 @@ namespace NetCore_Proje.Controllers
         {
             ViewBag.v1 = "Düzenleme";
             ViewBag.v2 = "Öne Çıkanlar";
-            ViewBag.v3 = "Öne Çıkanlar Sayfası";
+            ViewBag.v3 = "Öne Çıkanlar Düzenleme Sayfası";
             var values = featureManager.TGetById(1);
             return View(values);
         }

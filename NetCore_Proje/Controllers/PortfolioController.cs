@@ -14,7 +14,7 @@ namespace NetCore_Proje.Controllers
         {
             ViewBag.v1 = "Proje Listesi";
             ViewBag.v2 = "Projelerim";
-            ViewBag.v3 = "Proje Listesi";
+            ViewBag.v3 = "Proje Listesi Sayfası";
             var values = portfolioManager.TGetList();
             return View(values);
         }
@@ -23,7 +23,7 @@ namespace NetCore_Proje.Controllers
         {
             ViewBag.v1 = "Proje Ekleme";
             ViewBag.v2 = "Projelerim";
-            ViewBag.v3 = "Proje Ekle";
+            ViewBag.v3 = "Proje Ekleme Sayfası";
             return View();
         }
         [HttpPost]
@@ -56,7 +56,7 @@ namespace NetCore_Proje.Controllers
         {
             ViewBag.v1 = "Proje Düzenleme";
             ViewBag.v2 = "Projelerim";
-            ViewBag.v3 = "Proje Düzenle";
+            ViewBag.v3 = "Proje Düzenleme Sayfası";
             var value = portfolioManager.TGetById(id);
             return View(value);
         }

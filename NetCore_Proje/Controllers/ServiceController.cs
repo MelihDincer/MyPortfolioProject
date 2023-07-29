@@ -14,7 +14,7 @@ namespace NetCore_Proje.Controllers
         {
             ViewBag.v1 = "Hizmet Listesi";
             ViewBag.v2 = "Hizmetler";
-            ViewBag.v3 = "Hizmet Listesi";
+            ViewBag.v3 = "Hizmet Listesi Sayfası";
             var values = serviceManager.TGetList();
             return View(values);
         }
@@ -23,7 +23,7 @@ namespace NetCore_Proje.Controllers
         {
             ViewBag.v1 = "Hizmet Ekleme";
             ViewBag.v2 = "Hizmetler";
-            ViewBag.v3 = "Hizmet Ekle";
+            ViewBag.v3 = "Hizmet Ekleme Sayfası";
             return View();
         }
 
@@ -44,9 +44,9 @@ namespace NetCore_Proje.Controllers
         [HttpGet]
         public IActionResult EditService(int id)
         {
-            ViewBag.v1 = "Hizmet Güncelleme";
+            ViewBag.v1 = "Hizmet Düzenleme";
             ViewBag.v2 = "Hizmetler";
-            ViewBag.v3 = "Hizmet Güncelle";
+            ViewBag.v3 = "Hizmet Düzenleme Sayfası";
             var values = serviceManager.TGetById(id);
             return View(values);
         }

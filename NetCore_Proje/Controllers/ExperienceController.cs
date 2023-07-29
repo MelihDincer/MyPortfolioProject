@@ -12,7 +12,7 @@ namespace NetCore_Proje.Controllers
         {
             ViewBag.v1 = "Deneyim Listesi";
             ViewBag.v2 = "Deneyimler";
-            ViewBag.v3 = "Deneyim Listesi";
+            ViewBag.v3 = "Deneyim Listesi Sayfası";
             var values = experienceManager.TGetList();
             return View(values);
         }
@@ -21,7 +21,7 @@ namespace NetCore_Proje.Controllers
         {
             ViewBag.v1 = "Deneyim Ekleme";
             ViewBag.v2 = "Deneyimler";
-            ViewBag.v3 = "Deneyim Ekle";
+            ViewBag.v3 = "Deneyim Ekleme Sayfası";
             return View();
         }
         [HttpPost]
@@ -41,7 +41,7 @@ namespace NetCore_Proje.Controllers
         {
             ViewBag.v1 = "Deneyim Listesi";
             ViewBag.v2 = "Deneyimler";
-            ViewBag.v3 = "Deneyim Listesi";
+            ViewBag.v3 = "Deneyim Düzenleme Sayfası";
             var values = experienceManager.TGetById(id);
             return View(values);
         }
