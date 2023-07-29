@@ -14,7 +14,7 @@ namespace NetCore_Proje.Controllers
         {
             ViewBag.v1 = "Düzenleme";
             ViewBag.v2 = "Hakkımda";
-            ViewBag.v3 = "Hakkımda Sayfası";
+            ViewBag.v3 = "Hakkımda Düzenleme Sayfası";
             var values = aboutManager.TGetById(1); //id değeri "1" olan verileri getir.
             return View(values);
         }
