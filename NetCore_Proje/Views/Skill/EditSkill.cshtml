@@ -4,18 +4,6 @@
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-@*@using(Html.BeginForm("EditSkill", "Skill", FormMethod.Post)) //1. parametre action ismi, 2.parametre controller ismi, 3.parametre form method türü
-{
-    @Html.HiddenFor(x=> x.SkillID)
-    <br />
-    @Html.Label("Yetenek Başlığı")
-    @Html.TextBoxFor(x=>x.Title, new {@class = "form-control"})
-    <br />
-    <label>Değer</label>
-    @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
-    <br />
-    <button class="btn btn-success">Kaydet</button>
-}*@
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
