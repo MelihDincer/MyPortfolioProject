@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.WriterMessage
+@{
+    ViewData["Title"] = "AdminMessageSend";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="row justify-content-center">
+        <div class="col-md-12 grid-margin">
+            <form method="post" class="form-group">
+                <div class="card">
+                    <div class="text-right" style="padding-right:25px; padding-top:30px">
+                        <strong style="font-size:14px">@DateTime.Now.ToString("dd MMM yyyy")</strong>
+                    </div>
+                    <div class="card-body" style="margin-bottom:15px">
+                        <div class="container">
+                            <label>Alıcı Mail:</label>
+                            <input type="text" asp-for="Receiver" class="form-control" />
+                            <br />
+                            <label>Konu:</label>
+                            <input type="text" asp-for="Subject" class="form-control" />
+                            <br />
+                            <label>Mesaj:</label>
+                            <textarea rows="20" asp-for="MessageContent" class="form-control">  /></textarea>
+                            <button style="float:right" class="btn btn-primary mt-3">Gönder</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
