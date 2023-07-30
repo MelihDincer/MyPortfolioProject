@@ -20,17 +20,17 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(SocialMedia t)
         {
-            throw new NotImplementedException();
+            _socialmediaDal.Insert(t);
         }
 
         public void TDelete(SocialMedia t)
         {
-            throw new NotImplementedException();
+            _socialmediaDal.Delete(t);
         }
 
         public SocialMedia TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _socialmediaDal.GetByID(id);
         }
 
         public List<SocialMedia> TGetList()
@@ -45,7 +45,7 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(SocialMedia t)
         {
-            throw new NotImplementedException();
+           _socialmediaDal.Update(t);
         }
     }
 }
