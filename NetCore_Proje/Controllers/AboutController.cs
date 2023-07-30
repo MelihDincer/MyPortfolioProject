@@ -21,6 +21,7 @@ namespace NetCore_Proje.Controllers
         [HttpPost]
         public IActionResult Index(About about)
         {
+            about.AboutID = 1;
             aboutManager.TUpdate(about);
             return RedirectToAction("Index", "Default");
         }
