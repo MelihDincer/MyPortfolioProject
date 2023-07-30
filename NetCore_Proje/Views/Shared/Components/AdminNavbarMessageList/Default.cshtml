@@ -1,0 +1,20 @@
+﻿@using EntityLayer.Concrete
+@model List<WriterMessage>
+<div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+    <h6 class="p-3 mb-0">Son Mesajlar</h6>
+    @foreach(var item in Model)
+    {
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item preview-item" href="/AdminMessage/AdminMessageDetails/@item.WriterMessageID/">
+            <div class="preview-thumbnail">
+                <img src="~/userimage/@ViewBag.v1" class="rounded-circle profile-pic">
+            </div>
+            <div class="preview-item-content">
+                <p class="preview-subject ellipsis mb-1">@item.SenderName bir mesaj gönderdi.</p>
+                <p class="text-muted mb-0">@item.Date</p>
+            </div>
+        </a>
+    }
+    <div class="dropdown-divider"></div>
+    <p class="p-3 mb-0 text-center">3 Yeni Mesaj</p>
+</div>
