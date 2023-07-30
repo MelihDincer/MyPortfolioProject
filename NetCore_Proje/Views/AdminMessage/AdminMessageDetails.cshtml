@@ -1,0 +1,32 @@
+﻿@model EntityLayer.Concrete.WriterMessage
+@{
+    ViewData["Title"] = "AdminMessageDetails";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="row justify-content-center">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="text-right" style="padding-right:20px; padding-top:20px">
+                    <strong style="font-size:14px;">@Model.Date.ToString("dd MMM yyyy")</strong>
+                </div>
+                <div class="card-body" style="margin-bottom:15px">
+                    <div class="container-fluid">
+                        <p class="font-weight-500" style="font-size: 15px"><span style="font-weight:500">ID:</span> @Model.WriterMessageID</p>
+                        <p class="font-weight-500" style="font-size: 15px"><span style="font-weight:500">Konu:</span> @Model.Subject</p>
+                        <p class="font-weight-500" style="font-size: 15px; word-break:break-word"><span style="font-weight:500">Gönderenin Adı:</span> @Model.SenderName</p>
+                        <p class="font-weight-500" style="font-size: 15px; word-break:break-word"><span style="font-weight:500">Mail:</span> @Model.Sender</p>
+                        <p class="font-weight-500" style="font-size: 15px; word-break:break-word"><span style="font-weight:500">Mesaj:</span></p>
+                    </div>
+                    <div style="width:95%; height:400px; border-radius:17px; background-color:slategrey">
+                        <p class="font-weight-600" style="font-size: 15px; color:black; word-break:break-word; padding:28px">@Model.MessageContent</p>
+                    </div>
+                    <a asp-action="ReceiverMessageList" style="float:left" class="btn btn-outline-warning mt-5">Admin Gelen Mesajlar Sayfası</a>
+                    <a asp-action="SenderMessageList" style="float:right" class="btn btn-outline-primary mt-5">Admin Gönderilen Mesajlar Sayfası</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
