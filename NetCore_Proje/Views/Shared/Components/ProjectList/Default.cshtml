@@ -1,6 +1,11 @@
 ﻿@using EntityLayer.Concrete
 @model List<Portfolio>
 
+@{
+    string status = "";
+    string views = "";
+}
+
 <div class="row ">
     <div class="col-12 grid-margin">
         <div class="card">
@@ -20,8 +25,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach(var item in Model)
+                            @foreach (var item in Model)
                             {
+                                if (item.Value <= 70)
+                                {
+                                    status = "Henüz Tamamlanmadı";
+                                    views = "badge badge-outline-danger";
+                                }
+                                if (item.Value > 50 && item.Value < 100)
+                                {
+                                    status = "Tamamlanmak Üzere";
+                                    views = "badge badge-outline-warning";
+                                }
+                                if (item.Value == 100)
+                                {
+                                    status = "Tamamlandı";
+                                    views = "badge badge-outline-success";
+                                }
                                 <tr>
                                     <td>@item.PortfolioID</td>
                                     <td><img src="@item.ImageUrl"></td>
@@ -30,7 +50,7 @@
                                     <td>@item.Price</td>
                                     <td>%@item.Value</td>
                                     <td>
-                                        <div class="badge badge-outline-success">Approved</div>
+                                        <div class="@views">@status</div>
                                     </td>
                                 </tr>
                             }
