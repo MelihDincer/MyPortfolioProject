@@ -12,7 +12,7 @@ namespace NetCore_Proje.Controllers
         {
             return PartialView();
         }
-        public PartialViewResult PartialNavbar() 
+        public PartialViewResult PartialNavbar()
         {
             return PartialView();
         }
