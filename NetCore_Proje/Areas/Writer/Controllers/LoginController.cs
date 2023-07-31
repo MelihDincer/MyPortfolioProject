@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NetCore_Proje.Area.Writer.Models;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace NetCore_Proje.Area.Writer.Controllers
 {
+    [AllowAnonymous]
     [Area("Writer")]
     [Route("Writer/[controller]/[action]")]
     public class LoginController : Controller
@@ -29,10 +31,10 @@ namespace NetCore_Proje.Area.Writer.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(p.Username, p.Password,true,true);
+                var result = await _signInManager.PasswordSignInAsync(p.Username, p.Password, true, true);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Default");
+                    return RedirectToAction("Index", "Profile", new { area = "Writer" });
                 }
                 else
                 {
