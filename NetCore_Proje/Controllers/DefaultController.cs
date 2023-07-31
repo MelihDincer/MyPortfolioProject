@@ -1,14 +1,15 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
 namespace NetCore_Proje.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
-        // Backend mimaride yazdığımız kodları burada çağırıp, UI (Kullanıcı arayüzü) ile birleştireceğiz.
         public IActionResult Index()
         {
             return View();
