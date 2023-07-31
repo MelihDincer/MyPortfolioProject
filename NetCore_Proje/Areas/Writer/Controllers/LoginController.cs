@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NetCore_Proje.Area.Writer.Models;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace NetCore_Proje.Area.Writer.Controllers
 {
+    [AllowAnonymous]
     [Area("Writer")]
     [Route("Writer/[controller]/[action]")]
     public class LoginController : Controller
@@ -17,7 +19,7 @@ namespace NetCore_Proje.Area.Writer.Controllers
         {
             _signInManager = signInManager;
         }
-        //Kullanıcı Adı: admin41 <----> Şifre: 123456Aa*
+        //Kullanıcı Adı: admin41 <----> Şifre: 12-08-21Ms
 
         [HttpGet]
         public IActionResult Index()
@@ -32,7 +34,7 @@ namespace NetCore_Proje.Area.Writer.Controllers
                 var result = await _signInManager.PasswordSignInAsync(p.Username, p.Password,true,true);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Default");
+                    return RedirectToAction("Index", "Profile", new { area = "Writer" });
                 }
                 else
                 {
