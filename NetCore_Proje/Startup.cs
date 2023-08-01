@@ -51,7 +51,7 @@ namespace NetCore_Proje
             services.ConfigureApplicationCookie(options =>
             {
                 options.Cookie.HttpOnly = true;
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(100);//100 dakika boyunca oturum açýk kalsýn.
                 options.AccessDeniedPath = "/ErrorPage/Index/"; //Eriþimin reddedilmesi durumunda bu sayfaya git.
                 options.LoginPath = "/Writer/Login/Index/"; //Oturum düþtüðünde/Cookie temizlendiðinde bu sayfaya yönlendir.
             });
