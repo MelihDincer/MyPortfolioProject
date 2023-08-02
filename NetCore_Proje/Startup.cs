@@ -52,7 +52,7 @@ namespace NetCore_Proje
             {
                 options.Cookie.HttpOnly = true;
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(100);//100 dakika boyunca oturum açýk kalsýn.
-                options.AccessDeniedPath = "/ErrorPage/Index/"; //Eriþimin reddedilmesi durumunda bu sayfaya git.
+                options.AccessDeniedPath = "/ErrorPage/Error401/"; //Eriþimin reddedilmesi(yetki kýsýtlamasý) durumunda bu sayfaya git.
                 options.LoginPath = "/Writer/Login/Index/"; //Oturum düþtüðünde/Cookie temizlendiðinde bu sayfaya yönlendir.
             });
         }
@@ -70,6 +70,11 @@ namespace NetCore_Proje
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            //app.UseStatusCodePages(); //Projede olmayan sayfanýn hata kodunun gösterilmesi için projeye middleware olarak eklendi.
+
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404/");
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseAuthentication();
