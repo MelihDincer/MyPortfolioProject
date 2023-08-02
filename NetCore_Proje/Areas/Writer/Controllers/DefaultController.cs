@@ -18,6 +18,7 @@ namespace NetCore_Proje.Area.Writer.Controllers
             return View(values);
         }
         [HttpGet]
+        [Route("{id}")]
         public IActionResult AnnouncementDetails(int id)
         {
             var value = announcementManager.TGetById(id);
