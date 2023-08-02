@@ -40,12 +40,19 @@
                 type: "Get",
                 url: "/WriterUser/ListUser/",
 
-                success: function(funk){
+                success: function (funk) {
                     let users = jQuery.parseJSON(funk);
                     console.log(users);
+
+                        let htmlst = "<table class=table table bordered> <tr> <th>ID</th> <th>Ad</th> <th>Soyad</th> <th>Kullanıcı Adı</th> <th>Görsel URL</th> </tr>";
+                        $.each(users, (index, value) => {
+                            htmlst += `<tr> <td>${value.Id}</td> <td>${value.Name}</td> <td>${value.Surname}</td> <td>${value.UserName}</td> <td>${value.ImageURL}</td> </tr>`
+                        });
+                        htmlst += "</table>";
+                        $('#listuser').html(htmlst);
                 }
             });
-        })
+        });
     </script>
 }
 <script src="~/lib/jquery/dist/jquery.js"></script>
