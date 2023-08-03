@@ -39,25 +39,15 @@
                 </div>
             </div>
         </div>
-
         @await Component.InvokeAsync("LastFiveProjects")
-
     </div>
     @await Component.InvokeAsync("StatisticsDashboard2")
-
     @await Component.InvokeAsync("ProjectList")
-
     <div class="row">
-
         @await Component.InvokeAsync("MessageList")
-
         @await Component.InvokeAsync("SlideList")
-
         @await Component.InvokeAsync("ToDoListPanel")
-        
     </div>
-
     @await Component.InvokeAsync("VisitorMap")
-
 </body>
 </html>
