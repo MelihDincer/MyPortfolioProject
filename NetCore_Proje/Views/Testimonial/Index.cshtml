@@ -14,7 +14,6 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Görsel</th>
                                 <th>Ad Soyad</th>
                                 <th>Şirket</th>
                                 <th>Unvan</th>
@@ -26,10 +25,7 @@
                             @foreach(var item in Model)
                             {
                                 <tr>
-                                    <td>
-                                        <img src="@item.ImageUrl" alt="image" />
-                                    </td>
-                                    <td>@item.ClientName</td>
+                                    <td><img src="@item.ImageUrl" alt="image"/> &nbsp;@item.ClientName</td>
                                     <td>@item.Company</td>
                                     <td>@item.Title</td>
                                     <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-outline-danger" onclick="return confirm('Bu referans kaydını silmek istediğinize emin misiniz?')">Sil</a></td>
@@ -38,6 +34,8 @@
                             }
                         </tbody>
                     </table>
+                    <br />
+                    <a href="/Testimonial/AddTestimonial" class="btn btn-outline-info">Yeni Referans Ekle</a>
                 </div>
             </div>
         </div>
