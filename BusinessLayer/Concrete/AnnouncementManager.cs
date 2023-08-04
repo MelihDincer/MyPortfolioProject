@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(Announcement t)
         {
-            throw new NotImplementedException();
+            _announcementDal.Insert(t);
         }
 
         public void TDelete(Announcement t)
@@ -45,7 +45,7 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(Announcement t)
         {
-            throw new NotImplementedException();
+            _announcementDal.Update(t);
         }
     }
 }
