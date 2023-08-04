@@ -1,13 +1,44 @@
-﻿@model NetCore_Proje.Areas.Writer.Models.UserEditViewModel
+﻿@model NetCore_Proje.Areas.Writer.Models.UserEditProfileViewModel
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
+<style>
+    input[type="file"] {
+        display: none;
+    }
+
+    #label {
+        display: inline-block;
+        text-transform: uppercase;
+        color: #fff;
+        background: #c0392b;
+        text-align: center;
+        padding: 15px 40px;
+        letter-spacing: 1.5px;
+        user-select: none;
+        cursor: pointer;
+        box-shadow: 5px 15px 25px rgba(0,0,0,0.35);
+        border-radius: 50px;
+    }
+
+    label i {
+        font-size: 18px;
+        margin-right: 10px;
+    }
+
+    label:active {
+        transform: scale(0.9);
+    }
+
+</style>
+
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Profil Bilgilerini Düzenle</h4>
+            <br />
             <form class="forms-sample" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="exampleInputName1">Adınız</label>
@@ -18,25 +49,22 @@
                     <input type="text" asp-for="Surname" class="form-control" id="exampleInputName1" placeholder="Soyad">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword4">Şifreniz</label>
-                    <input type="password" asp-for="Password" class="form-control" id="exampleInputName1" placeholder="Şifreniz">
+                    <label for="exampleInputName1">Kullanıcı Adınız</label>
+                    <input type="text" asp-for="Username" class="form-control" id="exampleInputName1" placeholder="Kullanıcı Adı">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword4">Şifre Tekrar</label>
-                    <input type="password" asp-for="PasswordConfirm" class="form-control" id="exampleInputName1" placeholder="Şifre Tekrar">
+                    <label for="exampleInputName1">Soyadınız</label>
+                    <input type="text" asp-for="Mail" class="form-control" id="exampleInputName1" placeholder="Soyad">
                 </div>
+
                 <div class="form-group">
-                    <label>Resim Seç</label>
-                    <input type="file" asp-for="Picture" >
-                    @*<div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder="Resim Yükleyin">
-                        <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-primary" type="button">Yükle</button>
-                        </span>
-                    </div>*@
+                    <label>Resim Yükle</label>
+                    <br />
+                    <input type="file" asp-for="Picture" id="uploadBtn">
+                    <label id="label" for="uploadBtn"><i class="mdi mdi-cloud-upload"></i><span style="font-size:12px; padding:10px">Görsel Seç</span></label>
+
                 </div>
                 <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
-                <button class="btn btn-light">İptal</button>
             </form>
         </div>
     </div>
