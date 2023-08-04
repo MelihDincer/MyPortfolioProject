@@ -23,15 +23,17 @@ namespace NetCore_Proje.Areas.Writer.Controllers
         public async Task<IActionResult> Index()
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
-            UserEditViewModel model = new UserEditViewModel();
+            UserEditProfileViewModel model = new UserEditProfileViewModel();
             model.Name = values.Name;
             model.Surname = values.Surname;
+            model.Username = values.UserName;
+            model.Mail = values.Email;
             model.PictureURL = values.ImageURL;
             return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(UserEditViewModel p)
+        public async Task<IActionResult> Index(UserEditProfileViewModel p)
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             if(p.Picture != null)
@@ -46,7 +48,9 @@ namespace NetCore_Proje.Areas.Writer.Controllers
             }
             user.Name = p.Name;
             user.Surname = p.Surname;
-            user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, p.Password);
+            user.UserName = p.Username;
+            user.Email = p.Mail;
+            //user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, p.Password);
             var result = await _userManager.UpdateAsync(user);
             if(result.Succeeded)
             {
