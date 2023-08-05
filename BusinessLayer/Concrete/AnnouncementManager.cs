@@ -25,7 +25,7 @@ namespace BusinessLayer.Concrete
 
         public void TDelete(Announcement t)
         {
-            throw new NotImplementedException();
+           _announcementDal.Delete(t);
         }
 
         public Announcement TGetById(int id)
