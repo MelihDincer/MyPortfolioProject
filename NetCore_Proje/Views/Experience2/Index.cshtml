@@ -49,7 +49,9 @@
     <h5>Güncelleme Paneli</h5>
     <input type="text" class="form-control" id="inpeditexpid" placeholder="ID Giriniz" />
     <br />
-    <input type="text" class="form-control" id="inpeditexpname" placeholder="Tarih Giriniz" />
+    <input type="text" class="form-control" id="inpeditexpname" placeholder="Başlık Giriniz" />
+    <br />
+    <input type="text" class="form-control" id="inpeditexpdate" placeholder="Tarih Giriniz" />
 </div>
 
 @section scripts
@@ -104,11 +106,12 @@
                 dataType: "json",
                 type: "Get",
                 url: "/Experience2/GetById/",
-                data: { ExprerienceID: id },
+                data: { ExperienceID: id },
                 success: function (funk2) {
                     let result = jQuery.parseJSON(funk2);
                     console.log(result);
-                    let htmlstr = `<table class=table table-hover> <tr> <th>Deneyim ID</th> <td>${result.ExperienceID}</td></tr> <tr> <th> Deneyim Başlığı </th> <td> ${result.Name}</td> </tr> </table>`;
+                    let htmlstr = `<table class=table table-hover> <thead> <tr> <th>ID</th> <th>Başlık</th> <th>Tarih</th> </thead></tr>
+                            <tbody><td>${result.ExperienceID}</td> <td>${result.Name}</td> <td>${result.Date}</td> </tr> </tbody></table>`;
                     $("#listbyidexperience").html(htmlstr);
                 }
             });
@@ -118,28 +121,29 @@
         $("#btndelete").click(x => {
             let id = $("#inpexpid").val();
             $.ajax({
-                url: "/Experience/DeleteExperience/" + id,
+                url: "/Experience2/DeleteExperience/" + id,
                 type: "post",
                 contentType: "application/json",
                 dataType: "json",
                 success: function (funk3) {
-                    loadData("Bu veri başarıyla silindi.");
-
+                    alert("Bu veri başarıyla silindi.");
                 }
             });
         });
 
         $("#btnupdate").click(function () {
             let values = {
-                ExprerienceID: $("#inpeditexpid").val(),
-                Name: $("#inpeditexpname").val()
+                id: $("#inpeditexpid").val(),
+                name: $("#inpeditexpname").val(),
+                date: $("#inpeditexpdate").val()
             };
 
             $.ajax({
                 type: "post",
-                url: "/Experience2/UpdateExperince/",
+                url: "/Experience2/UpdateExperience/",
                 data: values,
-                success: function (func4) {
+                dataType: "json",
+                success: function (funk4) {
                     alert("Güncelleme işlemi yapıldı");
                 }
             });
