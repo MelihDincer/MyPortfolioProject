@@ -8,25 +8,25 @@
 <div class="col-md-6">
     <div class="p-2">
         <button type="button" id="btngetlistall" class="btn btn-outline-primary" >Verileri Getir</button>
-        <button type="button" id="btnadduser" class="btn btn-outline-info" >Kaydet</button>
     </div>
 </div>
 
-<h4 class="text-center"> Yazar Listesi</h4>
-<div class="p-2" id="listuser">
-    buraya veriler gelecek
-</div>
+@*<h3 class="text-center"> </h3>*@
+@*<div class="p-2 text-danger" id="listuser">
+   <h5>"Verileri Getir" butonuna tıkla. Mevcuttaki kayıtlı kullanıcı bilgilerini listele.</h5>
+</div>*@
 <br />
-
-<div class="col-md-12">
-    <input type="text" class="form-control" id="inpname"  placeholder="Ad"/>
-    <br />
-    <input type="text" class="form-control" id="inpsurname"  placeholder="Soyad"/>
-    <br />
-    <input type="text" class="form-control" id="inpusername" placeholder="Kullanıcı Adı" />
-    <br />
-    <input type="text" class="form-control" id="inpmail" placeholder="Mail Adresi" />
-    <br />
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Kullanıcı Listesi</h4>
+                <div class="table-responsive text-danger" id="listuser">
+                    <h5>"Verileri Getir" butonuna tıkla. Mevcuttaki kayıtlı kullanıcı bilgilerini listele.</h5>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @section Scripts
