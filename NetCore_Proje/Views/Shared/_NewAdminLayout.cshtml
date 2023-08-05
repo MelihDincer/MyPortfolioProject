@@ -24,7 +24,7 @@
                 <a class="sidebar-brand brand-logo" href="#"><img src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/logo.svg" alt="logo" /></a>
                 <a class="sidebar-brand brand-logo-mini" href="#"><img src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/logo-mini.svg" alt="logo" /></a>
             </div>
-           @await Component.InvokeAsync("NewSideBar")
+            @await Component.InvokeAsync("NewSideBar")
         </nav>
         <div class="container-fluid page-body-wrapper">
             <nav class="navbar p-0 fixed-top d-flex flex-row">
@@ -88,13 +88,7 @@
                                 <i class="mdi mdi-view-grid"></i>
                             </a>
                         </li>
-                        <li class="nav-item dropdown border-left">
-                            <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                                <i class="mdi mdi-email"></i>
-                                <span class="count bg-success"></span>
-                            </a>
-                            @await Component.InvokeAsync("AdminNavbarMessageList")
-                        </li>
+                        @await Component.InvokeAsync("AdminNavbarMessageList")
                         @await Component.InvokeAsync("AdminNotificationNavbarList")
                         @await Component.InvokeAsync("AdminAccountImageNavbar")
                     </ul>
@@ -116,12 +110,11 @@
                     </div>
                     @RenderBody()
                 </div>
-                @* aşağıdaki rendersection olarak tanımlanan scriptin Bütün View'lar için gerekli olmaması için required:false yapıldı. Aksi takdirde bu layoutu kullanan diğer sayfalara erişim sağlayacaktık.*@
-                @await RenderSectionAsync("scripts", required: false) 
+                @* aşağıdaki rendersection olarak tanımlanan scriptin Bütün View'lar için gerekli olmaması için required:false yapıldı. Aksi takdirde bu layoutu kullanan diğer sayfalara erişim sağlayamayacaktık.*@
+                @await RenderSectionAsync("scripts", required: false)
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
+                        <span class="text-center d-block text-center text-sm-left d-sm-inline-block">Copyright © @DateTime.Now.Year Tüm Hakları Saklıdır.</span>
                     </div>
                 </footer>
             </div>
