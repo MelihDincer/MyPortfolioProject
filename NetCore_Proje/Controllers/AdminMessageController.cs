@@ -2,13 +2,16 @@
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Data;
 using System.Linq;
 
 namespace NetCore_Proje.Controllers
 {
     //Sisteme kayıtlı user'lar ile iletişime geçilen kısım (Writer Message)
+    [Authorize(Roles = "Admin")]
     public class AdminMessageController : Controller
     {
         WriterMessageManager writerMessageManager = new WriterMessageManager(new EfWriterMessageDal());
