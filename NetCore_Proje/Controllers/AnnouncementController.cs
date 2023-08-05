@@ -1,10 +1,13 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace NetCore_Proje.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AnnouncementController : Controller
     {
         AnnouncementManager announcementManager = new AnnouncementManager(new EfAnnouncementDal());
@@ -28,6 +31,12 @@ namespace NetCore_Proje.Controllers
         public IActionResult AddAnnouncement(Announcement announcement)
         {
             announcementManager.TAdd(announcement);
+            return RedirectToAction("Index");
+        }
+        public IActionResult DeleteAnnouncement(int id)
+        {
+            var values = announcementManager.TGetById(id);
+            announcementManager.TDelete(values);
             return RedirectToAction("Index");
         }
         [HttpGet]
