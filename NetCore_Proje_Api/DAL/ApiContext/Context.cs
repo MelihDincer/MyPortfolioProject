@@ -8,11 +8,9 @@ namespace NetCore_Proje_Api.DAL.ApiContext
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //base.onconfiguring(optionsbuilder);
-            optionsBuilder.UseSqlServer("server=MELIH;database=CoreProjeDB2;integrated security=true");
+            optionsBuilder.UseSqlServer("server=DESKTOP-PBE5IS4\\SQLEXPRESS;database=CoreProjeDB2;integrated security=true");
         }
 
         public DbSet<Category> Categories { get; set; }
-
-
     }
 }
