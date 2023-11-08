@@ -64,7 +64,7 @@ namespace NetCore_Proje_Api.Controllers
         {
             using var c = new Context();
             var value = c.Categories.Find(p.CategoryID);
-            var values = c.Find<Category>(p.CategoryID);
+            //var values = c.Find<Category>(p.CategoryID);
             if (value != null)
             {
                 value.CategoryName = p.CategoryName;
