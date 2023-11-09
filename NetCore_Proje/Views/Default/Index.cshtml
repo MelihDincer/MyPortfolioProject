@@ -9,7 +9,7 @@
     @await Html.PartialAsync("NavbarPartial")
     <div class="page-content">
         <div id="content">
-            @await Component.InvokeAsync("FeatureList") @* Shared/Components/FeatureList klasörü içerisindeki Default.cshtml çalışacak. *@
+            @await Component.InvokeAsync("FeatureList")
             @await Component.InvokeAsync("AboutList")
             @await Component.InvokeAsync("ServiceList")
             @await Component.InvokeAsync("SkillList")
@@ -21,10 +21,10 @@
                     <div class="text-center mb-5">
                         <h2 class="marker marker-center">İletişim</h2>
                     </div>
-                    <div class="row">                       
-            @*@await Component.InvokeAsync("SendMessage")*@
-            @await Html.PartialAsync("/Views/Default/SendMessage.cshtml")
-            @await Component.InvokeAsync("ContactDetails")
+                    <div class="row">
+                        @*@await Component.InvokeAsync("SendMessage")*@
+                        @await Html.PartialAsync("/Views/Default/SendMessage.cshtml")
+                        @await Component.InvokeAsync("ContactDetails")
                     </div>
                 </div>
             </div>
@@ -32,24 +32,14 @@
                 <div class="container">
                     <div class="my-3">
                         <div class="h4">Melih Dinçer</div>
-                        <p>Full Stack Web Developer</p>
-                        <div class="social-nav">
-                            <nav role="navigation">
-                                <ul class="nav justify-content-center">
-                                    <li class="nav-item"><a class="nav-link" href="https://twitter.com/templateflip" title="Twitter"><i class="fab fa-twitter"></i><span class="menu-title sr-only">Twitter</span></a></li>
-                                    <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/templateflip" title="Facebook"><i class="fab fa-facebook"></i><span class="menu-title sr-only">Facebook</span></a></li>
-                                    <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/templateflip" title="Instagram"><i class="fab fa-instagram"></i><span class="menu-title sr-only">Instagram</span></a></li>
-                                    <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/" title="LinkedIn"><i class="fab fa-linkedin"></i><span class="menu-title sr-only">LinkedIn</span></a></li>
-                                    <li class="nav-item"><a class="nav-link" href="https://www.behance.net/templateflip" title="Behance"><i class="fab fa-behance"></i><span class="menu-title sr-only">Behance</span></a></li>
-                                </ul>
-                            </nav>
-                        </div>
+                        <p>Bilgisayar Mühendisi - Software Developer</p>
+                        @await Component.InvokeAsync("FooterSocialMediaIcons")
                     </div>
                     <div class="text-small text-secondary">
-                        <div class="mb-1">&copy; @DateTime.Now.Year | Tüm hakları saklıdır.</div>
-                        <div>
-                            <!-- Make sure to buy a license for the template before removing the line below. Buy license on https://templateflip.com/ -->HTML5 Tema - <a href="https://templateflip.com/" target="_blank">TemplateFlip</a>
-                        </div>
+                        <div class="mb-1">&copy; @DateTime.Now.Year | Tüm Hakları Saklıdır.</div>
+                        @* <div>
+                        <!-- Make sure to buy a license for the template before removing the line below. Buy license on https://templateflip.com/ -->Design - <a href="https://templateflip.com/" target="_blank">TemplateFlip</a>
+                        </div> *@
                     </div>
                 </div>
             </footer>
