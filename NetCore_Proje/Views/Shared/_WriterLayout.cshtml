@@ -5,16 +5,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@await Html.PartialAsync("/Areas/Writer/Views/Default/HeadPartial.cshtml")
+@await Html.PartialAsync("/Areas/Writer/Views/WriterPartials/HeadPartial.cshtml")
 
 <body>
     <div class="container-scroller">
 
-        @await Html.PartialAsync("/Areas/Writer/Views/Default/_NavbarPartial.cshtml")
+        @await Html.PartialAsync("/Areas/Writer/Views/WriterPartials/_NavbarPartial.cshtml")
 
         <div class="container-fluid page-body-wrapper">
 
-            @await Html.PartialAsync("/Areas/Writer/Views/Default/_SidebarPartial.cshtml")
+            @await Html.PartialAsync("/Areas/Writer/Views/WriterPartials/_SidebarPartial.cshtml")
 
             <div class="main-panel">
                 <div class="content-wrapper">
@@ -24,10 +24,10 @@
 
                     </div>
                 </div>
-                @await Html.PartialAsync("/Areas/Writer/Views/Default/_FooterPartial.cshtml")
+                @await Html.PartialAsync("/Areas/Writer/Views/WriterPartials/_FooterPartial.cshtml")
             </div>
         </div>
     </div>
-    @await Html.PartialAsync("/Areas/Writer/Views/Default/_ScriptsPartial.cshtml")
+    @await Html.PartialAsync("/Areas/Writer/Views/WriterPartials/_ScriptsPartial.cshtml")
 </body>
 </html>
