@@ -37,7 +37,8 @@ namespace NetCore_Proje.Area.Writer.Controllers
                 var result = await _signInManager.PasswordSignInAsync(p.Username, p.Password, true, true);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Dashboard", new { area = "Writer" });
+                    //return RedirectToAction("Index", "Dashboard", new { area = "Writer" });
+                    return LocalRedirect("/Writer/Dashboard/Index");
                 }
                 else
                 {
