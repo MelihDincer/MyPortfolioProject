@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace NetCore_Proje.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class DashboardController : Controller
+    public class AdminDashboardController : Controller
     {
         public IActionResult Index()
         {
