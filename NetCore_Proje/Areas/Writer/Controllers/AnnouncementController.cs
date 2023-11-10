@@ -9,7 +9,7 @@ namespace NetCore_Proje.Area.Writer.Controllers
     [Area("Writer")]
     [Authorize]
     [Route("Writer/[controller]/[action]")]
-    public class DefaultController : Controller
+    public class AnnouncementController : Controller
     {
         AnnouncementManager announcementManager = new AnnouncementManager(new EfAnnouncementDal());
         public IActionResult Index()
