@@ -15,7 +15,7 @@ namespace DataAccessLayer.Concrete
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //base.onconfiguring(optionsbuilder);
-            optionsBuilder.UseSqlServer("server=DESKTOP-PBE5IS4\\SQLEXPRESS;database=CoreProjeDB;integrated security=true");
+            optionsBuilder.UseSqlServer("xxxxxxxxxxxxxxxxxxx");
         }
 
         public DbSet<About> Abouts { get; set; } // <About> == Sınıfın ismi || Abouts  SQL Server da gözükecek tablo adı.
