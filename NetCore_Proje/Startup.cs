@@ -1,4 +1,8 @@
+using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -32,6 +36,9 @@ namespace NetCore_Proje
             services.AddIdentity<WriterUser, WriterRole>().AddEntityFrameworkStores<Context>();
             services.AddControllersWithViews();
 
+            services.AddScoped<IPortfolioService, PortfolioManager>();
+            services.AddScoped<IPortfolioDal, EfPortfolioDal>();
+
             services.AddMvc(config =>
             {
                 var policy = new AuthorizationPolicyBuilder()
@@ -41,13 +48,6 @@ namespace NetCore_Proje
             });
 
             services.AddMvc();
-            //services.AddAuthentication(
-            //    CookieAuthenticationDefaults.AuthenticationScheme)
-            //    .AddCookie(x =>
-            //    {
-            //        x.LoginPath = "/AdminLogin/Index/";
-            //    });
-
             services.ConfigureApplicationCookie(options =>
             {
                 options.Cookie.HttpOnly = true;
