@@ -28,30 +28,10 @@
                     </div>
                 </div>
             </div>
-            <footer class="pt-4 pb-4 text-center bg-light">
-                <div class="container">
-                    <div class="my-3">
-                        <div class="h4">Melih Dinçer</div>
-                        <p>Bilgisayar Mühendisi - Software Developer</p>
-                        @await Component.InvokeAsync("FooterSocialMediaIcons")
-                    </div>
-                    <div class="text-small text-secondary">
-                        <div>&copy; @DateTime.Now.Year | Tüm Hakları Saklıdır.</div>
-                        @* <div>
-                        <!-- Make sure to buy a license for the template before removing the line below. Buy license on https://templateflip.com/ -->Design - <a href="https://templateflip.com/" target="_blank">TemplateFlip</a>
-                        </div> *@
-                    </div>
-                </div>
-            </footer>
+            @await Html.PartialAsync("/Views/Default/FooterPartial.cshtml")
         </div>
     </div>
     <div id="scrolltop"><a class="btn btn-secondary" href="#top"><span class="icon"><i class="fas fa-angle-up fa-x"></i></span></a></div>
-    <script src="~/Template/scripts/imagesloaded.pkgd.min.js?ver=1.2.0"></script>
-    <script src="~/Template/scripts/masonry.pkgd.min.js?ver=1.2.0"></script>
-    <script src="~/Template/scripts/BigPicture.min.js?ver=1.2.0"></script>
-    <script src="~/Template/scripts/purecounter.min.js?ver=1.2.0"></script>
-    <script src="~/Template/scripts/bootstrap.bundle.min.js?ver=1.2.0"></script>
-    <script src="~/Template/scripts/aos.min.js?ver=1.2.0"></script>
-    <script src="~/Template/scripts/main.js?ver=1.2.0"></script>
+    @await Html.PartialAsync("/Views/Default/ScriptPartial.cshtml")
 </body>
 </html>
