@@ -1,23 +1,23 @@
 ﻿@using EntityLayer.Concrete
 @model List<Announcement>
 
-    @{
-        string color = "";
-    }
+@{
+    string color = "";
+}
 
 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
     <p class="mb-0 font-weight-normal float-left dropdown-header">Bildirimler</p>
     @foreach (var item in Model)
     {
-        if(item.Status == "Yeni Yazı")
+        if (item.Status == "Eğitim Sonu")
         {
             color = "preview-icon bg-success";
         }
-        if (item.Status == "Yeni Video")
+        if (item.Status == "Revize")
         {
             color = "preview-icon bg-warning";
         }
-        if (item.Status == "Konferans")
+        if (item.Status == "Paylaşım")
         {
             color = "preview-icon bg-info";
         }
@@ -29,7 +29,7 @@
         {
             color = "preview-icon bg-danger";
         }
-        <a class="dropdown-item preview-item" href="/Writer/Default/AnnouncementDetails/@item.ID">
+        <a class="dropdown-item preview-item" href="/Writer/Announcement/AnnouncementDetails/@item.ID">
             <div class="preview-thumbnail">
                 <div class="@color">
                     <i class="ti-info-alt mx-0"></i>
@@ -40,7 +40,9 @@
                 <p class="font-weight-light small-text mb-0 text-muted">
                     @item.Status
                 </p>
+                <small style="font-family:cursive">@item.Date.ToString("dd MMMM yyyy")</small>
             </div>
         </a>
     }
+    <a href="/Writer/Announcement/Index" class="btn btn-secondary btn-lg btn-block">Tümünü Görüntüle</a>
 </div>

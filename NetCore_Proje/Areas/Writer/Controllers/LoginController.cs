@@ -19,10 +19,7 @@ namespace NetCore_Proje.Area.Writer.Controllers
         {
             _signInManager = signInManager;
         }
-
         //Dependency Injection Uygulaması --> Son
-
-        //Kullanıcı Adı: admin41 <----> Şifre: 123456Aa*
 
         [HttpGet]
         public IActionResult Index()

@@ -7,7 +7,6 @@ using Newtonsoft.Json.Linq;
 namespace NetCore_Proje.Area.Writer.Controllers
 {
     [Area("Writer")]
-    [Authorize]
     [Route("Writer/[controller]/[action]")]
     public class AnnouncementController : Controller
     {
