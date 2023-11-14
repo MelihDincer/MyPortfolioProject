@@ -27,25 +27,25 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
+                            if (!(item.Status == "Eğitim Sonu" && item.Status == "Revize" && item.Status == "Paylaşım" && item.Status == "Önemli"))
+                            {
+                                color = "badge badge-primary";
+                            }
                             if (item.Status == "Eğitim Sonu")
                             {
-                                color = "preview-icon bg-success";
+                                color = "badge badge-success";
                             }
                             if (item.Status == "Revize")
                             {
-                                color = "preview-icon bg-warning";
+                                color = "badge badge-warning";
                             }
                             if (item.Status == "Paylaşım")
                             {
-                                color = "preview-icon bg-info";
+                                color = "badge badge-info";
                             }
-                            if (item.Status == "Workshop")
+                            if (item.Status == "Önemli")
                             {
-                                color = "preview-icon bg-dark";
-                            }
-                            if (item.Status == "Bootcamp")
-                            {
-                                color = "preview-icon bg-danger";
+                                color = "badge badge-danger";
                             }
                             <tr>
                                 <td>@item.ID</td>

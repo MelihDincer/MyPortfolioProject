@@ -26,26 +26,26 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            if(item.Status == "Yeni Yazı")
-                            {
-                                color = "badge badge-danger";
-                            }
-                            if (item.Status == "Yeni Video")
-                            {
-                                color = "badge badge-warning";
-                            }
-                            if (item.Status == "Konferans")
-                            {
-                                color = "badge badge-info";
-                            }
-                            if (item.Status == "Workshop")
-                            {
-                                color = "badge badge-success";
-                            }
-                            if (item.Status == "Bootcamp")
+                            if (!(item.Status == "Eğitim Sonu" && item.Status == "Revize" && item.Status == "Paylaşım" && item.Status == "Önemli"))
                             {
                                 color = "badge badge-primary";
                             }
+                            if (item.Status == "Eğitim Sonu")
+                            {
+                                color = "badge badge-success";
+                            }
+                            if (item.Status == "Revize")
+                            {
+                                color = "badge badge-warning";
+                            }
+                            if (item.Status == "Paylaşım")
+                            {
+                                color = "badge badge-info";
+                            }
+                            if (item.Status == "Önemli")
+                            {
+                                color = "badge badge-danger";
+                            }                         
                             
                             <tr>
                                 <td>@item.ID</td>

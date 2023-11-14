@@ -105,9 +105,9 @@ img.avatar {
 
 /* Grid Item */
 .grid-sizer,
-/*.grid-item {
+.grid-item {
   width: 100%;
-}*/
+}
 
 .grid-item {
   padding-bottom: 12px;
@@ -126,7 +126,7 @@ img.avatar {
 
 .grid-item img {
   display: block;
-  /*width: 100%;*/
+  width: 100%;
   max-width: 100%;
 }
 

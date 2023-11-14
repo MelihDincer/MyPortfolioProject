@@ -9,32 +9,40 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Giden Kutusu</h4>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Konu</th>
-                            <th>Alıcı</th>
-                            <th>Tarih</th>
-                            <th>Detaylar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
+            @if (Model.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td>@item.WriterMessageID</td>
-                                <td>@item.Subject</td>
-                                <td>@item.ReceiverName</td>
-                                <td>@(((DateTime)item.Date).ToString("dd MMM yyyy"))</td>
-                                <td><a href="/Writer/Message/RecieverMessageDetails/@item.WriterMessageID" class="badge badge-dark">Mesajı Gör</a></td>
+                                <th>#</th>
+                                <th>Konu</th>
+                                <th>Alıcı</th>
+                                <th>Tarih</th>
+                                <th>Detaylar</th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.WriterMessageID</td>
+                                    <td>@item.Subject</td>
+                                    <td>@item.ReceiverName</td>
+                                    <td>@(((DateTime)item.Date).ToString("dd MMM yyyy"))</td>
+                                    <td><a href="/Writer/Message/RecieverMessageDetails/@item.WriterMessageID" class="badge badge-dark">Mesajı Gör</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="container mt-5">
+                    <h4 style="color:crimson">Henüz hiç mesaj göndermemişsiniz...</h4>
+                </div>
+            }
         </div>
     </div>
 </div>
-
