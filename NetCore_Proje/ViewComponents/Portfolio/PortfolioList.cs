@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace NetCore_Proje.ViewComponents.Portfolio
 {
@@ -9,7 +10,7 @@ namespace NetCore_Proje.ViewComponents.Portfolio
         PortfolioManager portfolioManager = new PortfolioManager(new EfPortfolioDal());
         public IViewComponentResult Invoke()
         {
-            var values = portfolioManager.TGetList();
+            var values = portfolioManager.TGetList().OrderByDescending(x=>x.PortfolioID).ToList();
             return View(values);
         }
     }
